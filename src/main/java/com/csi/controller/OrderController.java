@@ -3,6 +3,7 @@ package com.csi.controller;
 
 import com.csi.entity.OrderDetails;
 import com.csi.service.OrderServiceImpl;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,6 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/")
+@Slf4j
 public class OrderController {
 
     @Autowired
@@ -19,6 +21,7 @@ public class OrderController {
 
     @PostMapping("/saveorder")
     public ResponseEntity<OrderDetails> saveOrder(@RequestBody OrderDetails orderDetails){
+        log.info("Jenkins Check");
         return new ResponseEntity<>(orderServiceImpl.saveOrer(orderDetails), HttpStatus.CREATED);
     }
 

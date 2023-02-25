@@ -10,4 +10,6 @@ import java.util.List;
 public interface OrderRepoImpl extends JpaRepository<OrderDetails,Long> {
 
     List<OrderDetails> findByOrderName(String orderName);
+
+
 }
